@@ -5,7 +5,7 @@ dependencies {
 
 plugins {
     id("kamp-textkeygen")
-    id("kamp-serverstarter")
+    id("kamp-server-starter")
 }
 
 textKeyGenerator {

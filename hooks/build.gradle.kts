@@ -1,5 +1,5 @@
 plugins {
-    id("kamp-serverstarter")
+    id("kamp-server-starter")
 }
 
 serverStarter {
