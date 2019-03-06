@@ -4,13 +4,12 @@ dependencies {
 }
 
 plugins {
-    id("kamp-textkeygen")
+    id("kamp-textkey-generator")
     id("kamp-server-starter")
 }
 
 textKeyGenerator {
     className = "LvdmTextKeys"
-    packageName("ch.leadrian.samp.kamp.examples.lvdm")
 }
 
 serverStarter {
