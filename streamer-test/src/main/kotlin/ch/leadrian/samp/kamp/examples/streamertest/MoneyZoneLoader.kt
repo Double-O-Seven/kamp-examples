@@ -1,22 +1,31 @@
 package ch.leadrian.samp.kamp.examples.streamertest
 
 import ch.leadrian.samp.kamp.core.api.constants.GameTextStyle
+import ch.leadrian.samp.kamp.core.api.constants.MapIconStyle
+import ch.leadrian.samp.kamp.core.api.constants.MapIconType
 import ch.leadrian.samp.kamp.core.api.constants.TextDrawCodes
+import ch.leadrian.samp.kamp.core.api.data.Colors
 import ch.leadrian.samp.kamp.core.api.data.Vector3D
 import ch.leadrian.samp.kamp.core.api.data.vector3DOf
 import ch.leadrian.samp.kamp.core.api.text.GameTextSender
+import ch.leadrian.samp.kamp.core.api.text.MessageSender
 import ch.leadrian.samp.kamp.streamer.api.callback.onEnter
 import ch.leadrian.samp.kamp.streamer.api.callback.onLeave
 import ch.leadrian.samp.kamp.streamer.api.service.StreamableCheckpointService
+import ch.leadrian.samp.kamp.streamer.api.service.StreamableMapIconService
 import ch.leadrian.samp.kamp.streamer.api.service.StreamableTextLabelService
 import javax.annotation.PostConstruct
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-internal class MoneyZoneLoader(
+internal class MoneyZoneLoader
+@Inject
+constructor(
         private val streamableCheckpointService: StreamableCheckpointService,
-        private val streamableTextLabelService: StreamableTextLabelService,
-        private val gameTextSender: GameTextSender
+        private val gameTextSender: GameTextSender,
+        private val streamableMapIconService: StreamableMapIconService,
+        private val messageSender: MessageSender
 ) {
 
     private val moneyZones: List<MoneyZone> = listOf(
@@ -37,6 +46,7 @@ internal class MoneyZoneLoader(
                     size = 5f,
                     interiorIds = mutableSetOf(moneyZone.interiorId)
             )
+            streamableMapIconService.createStreamableMapIcon(moneyZone.coordinates, MapIconType.DOLLAR_SIGN)
             streamableCheckpoint.onEnter { player ->
                 gameTextSender.sendGameTextToPlayer(
                         player,
@@ -47,7 +57,7 @@ internal class MoneyZoneLoader(
                 player.giveMoney(250)
             }
             streamableCheckpoint.onLeave { player ->
-                gameTextSender.sendGameTextToPlayer(player, GameTextStyle.BANK_GOTHIC_CENTER_2, 3, "Goodbye!")
+                messageSender.sendMessageToPlayer(player, Colors.GREEN, "Goodbye!")
             }
         }
     }

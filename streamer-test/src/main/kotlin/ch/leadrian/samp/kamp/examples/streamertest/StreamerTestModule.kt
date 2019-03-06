@@ -12,6 +12,7 @@ class StreamerTestModule : KampModule() {
         bind(MapLoader::class.java).asEagerSingleton()
         bind(MapIconLoader::class.java).asEagerSingleton()
         bind(SanAndreasZoneLoader::class.java).asEagerSingleton()
+        bind(MoneyZoneLoader::class.java).asEagerSingleton()
         bind(NodeFileSource::class.java).toInstance(ResourcesNodeFileSource(StreamerTestGameMode::class.java))
         newCommandsSetBinder().apply {
             addBinding().to(StreamerCommands::class.java)
