@@ -1,6 +1,7 @@
 dependencies {
-    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-core", version = "1.0.0-rc1")
-    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-view", version = "1.0.0-rc1")
+    val kampVersion: String by rootProject.extra
+    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-core", version = kampVersion)
+    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-view", version = kampVersion)
     implementation(group = "org.slf4j", name = "slf4j-log4j12", version = "1.7.25")
 }
 
