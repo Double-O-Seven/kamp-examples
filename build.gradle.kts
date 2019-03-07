@@ -10,8 +10,8 @@ buildscript {
     }
 
     dependencies {
-        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-textkey-generator", version = "1.0.0-rc1")
-        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-server-starter", version = "1.0.0-rc1")
+        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-textkey-generator", version = "1.0.0-rc2")
+        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-server-starter", version = "1.0.0-rc2")
     }
 }
 
