@@ -6,7 +6,7 @@ dependencies {
 }
 
 plugins {
-    id("kamp-server-starter")
+    id("ch.leadrian.samp.kamp.kamp-server-starter") version "1.0.0-rc2"
 }
 
 serverStarter {

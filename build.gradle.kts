@@ -1,20 +1,5 @@
 import groovy.lang.Closure
 
-buildscript {
-    repositories {
-        mavenCentral()
-        mavenLocal()
-        maven {
-            setUrl("https://plugins.gradle.org/m2/")
-        }
-    }
-
-    dependencies {
-        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-textkey-generator", version = "1.0.0-rc2")
-        classpath(group = "ch.leadrian.samp.kamp", name = "kamp-server-starter", version = "1.0.0-rc2")
-    }
-}
-
 plugins {
     kotlin("jvm") version "1.3.11"
     java
@@ -37,7 +22,6 @@ allprojects {
     group = "ch.leadrian.samp.kamp"
 
     repositories {
-        mavenLocal()
         mavenCentral()
     }
 }

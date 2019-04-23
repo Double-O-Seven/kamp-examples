@@ -4,8 +4,8 @@ dependencies {
 }
 
 plugins {
-    id("kamp-textkey-generator")
-    id("kamp-server-starter")
+    id("ch.leadrian.samp.kamp.kamp-textkey-generator") version "1.0.0-rc2"
+    id("ch.leadrian.samp.kamp.kamp-server-starter") version "1.0.0-rc2"
 }
 
 textKeyGenerator {
