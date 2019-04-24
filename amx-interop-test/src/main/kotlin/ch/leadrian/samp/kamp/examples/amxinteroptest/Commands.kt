@@ -1,5 +1,6 @@
 package ch.leadrian.samp.kamp.examples.amxinteroptest
 
+import ch.leadrian.samp.kamp.core.api.amx.AmxNativeFunction1
 import ch.leadrian.samp.kamp.core.api.amx.AmxNativeFunction2
 import ch.leadrian.samp.kamp.core.api.amx.AmxNativeFunction3
 import ch.leadrian.samp.kamp.core.api.amx.AmxNativeFunction4
@@ -64,5 +65,12 @@ constructor(private val messageSender: MessageSender) : Commands() {
         val z = MutableFloatCell()
         GetPlayerPos(player.id.value, x, y, z)
         player.coordinates = vector3DOf(x.value, y.value, z.value + 2f)
+    }
+
+    private val SetGameModeText by AmxNativeFunction1<String>()
+
+    @Command
+    fun gmt(player: Player, text: String) {
+        SetGameModeText(text)
     }
 }

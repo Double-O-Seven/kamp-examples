@@ -7,7 +7,7 @@ plugins {
     id("com.palantir.git-version") version "0.12.0-rc2"
 }
 
-val kampVersion: String by extra { "1.0.0-rc1" }
+val kampVersion: String by extra { "1.0.0-rc8" }
 
 val gitVersion: Closure<String> by extra
 
@@ -23,6 +23,7 @@ allprojects {
 
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 }
 
