@@ -11,8 +11,6 @@ constructor() : EntityExtensionFactory<FullyControllableNPC, NPCCombatState> {
 
     override val extensionClass: KClass<NPCCombatState> = NPCCombatState::class
 
-    override fun create(entity: FullyControllableNPC): NPCCombatState = NPCCombatState(
-            entity
-    )
+    override fun create(entity: FullyControllableNPC): NPCCombatState = NPCCombatState(entity)
 
 }
