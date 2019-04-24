@@ -8,6 +8,7 @@
    * AMX Interop Test - a gamemode demonstrating how to manually add additional native methods and callbacks from other native plugins
    * Hooks - a gamemode demonstrating how to hook SA-MP native functions on the lowest level, for an anti-cheat tool for example
    * Streamer Test - a gamemode demonstrating the capabilities of the streamer that comes as part of the extended Kamp API
+   * FCNPC Test - a gamemode demonstrating the FCNPC wrapper
  
 The gamemode Gradle projects also demonstrate how to use [kamp-server-starter](https://github.com/Double-O-Seven/kamp-server-starter) to automatically configure and start a server and [kamp-textkey-generator](https://github.com/Double-O-Seven/kamp-textkey-generator) to generate TextKeys from `string_<Locale>.properties` files.
 
