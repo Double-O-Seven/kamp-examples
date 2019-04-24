@@ -21,7 +21,8 @@ class FCNPCTestCommands
 constructor(
         private val fcnpcService: FCNPCService,
         private val dialogService: DialogService,
-        private val messageSender: MessageSender
+        private val messageSender: MessageSender,
+        private val npcCombatStateFactory: NPCCombatStateFactory
 ) : Commands() {
 
     companion object {
@@ -53,7 +54,7 @@ constructor(
             z += 1
         }
         val npc = fcnpcService.createNPC(name)
-        npc.extensions.install(NPCCombatState.Factory)
+        npc.extensions.install(npcCombatStateFactory)
         npc.spawn(skinModel, coordinates)
     }
 
