@@ -2,7 +2,7 @@ dependencies {
     val kampVersion: String by rootProject.extra
     implementation(group = "ch.leadrian.samp.kamp", name = "kamp-core", version = kampVersion)
     implementation(group = "org.slf4j", name = "slf4j-log4j12", version = "1.7.25")
-    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-fcnpc-wrapper", version = "9b2c126")
+    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-fcnpc-wrapper", version = "1.0.0-rc1")
 }
 
 plugins {
@@ -19,13 +19,13 @@ serverStarter {
     additionalLinuxPlugins(projectDir.resolve("plugins/FCNPC.so"))
 }
 
-val copyScriptfiles by tasks.creating(Copy::class) {
+val copyScriptFiles by tasks.creating(Copy::class) {
     from(projectDir.resolve("scriptfiles"))
     into(buildDir.resolve("samp-server/scriptfiles"))
 }
 
 tasks {
     configureServer {
-        finalizedBy(copyScriptfiles)
+        finalizedBy(copyScriptFiles)
     }
 }
