@@ -1,6 +1,4 @@
 dependencies {
-    val kampVersion: String by rootProject.extra
-    implementation(group = "ch.leadrian.samp.kamp", name = "kamp-core", version = kampVersion)
     implementation(group = "org.slf4j", name = "slf4j-log4j12", version = "1.7.25")
     implementation(group = "ch.leadrian.samp.kamp", name = "kamp-fcnpc-wrapper", version = "1.0.0-rc1")
 }
@@ -14,7 +12,6 @@ serverStarter {
     rconPassword = "test1234"
     maxNPCs = 10
     jvmOption("-Xmx1G")
-    configProperty("kamp.ignore.version.mismatch", true)
     additionalWindowsPlugins(projectDir.resolve("plugins/FCNPC.dll"))
     additionalLinuxPlugins(projectDir.resolve("plugins/FCNPC.so"))
 }
